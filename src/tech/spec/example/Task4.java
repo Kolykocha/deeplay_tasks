@@ -16,18 +16,26 @@ public class Task4 {
         int groups4 = 0;
         int[] numbers5 = {17, 12, 11, 3, 9, 8};
         int groups5 = 2;
+        int[] numbers6 = {};
+        int groups6 = 3;
         distrNum(numbers, groups);
         distrNum(numbers2, groups2);
         distrNum(numbers3, groups3);
         distrNum(numbers4, groups4);
         distrNum(numbers5, groups5);
+        distrNum(numbers6, groups6);
     }
     public static void distrNum(int[] num, int gps) {
-        if (gps < 1 ){
+       if (gps < 1 ){
             System.out.println("Исходный массив: " + Arrays.toString(num)+" Число групп: "+gps);
             System.out.println("Распределение невозможно. Неверное число групп\n");
             return;
         }
+       if(num.length < 1){
+           System.out.println("Исходный массив: " + Arrays.toString(num)+" Число групп: "+gps);
+           System.out.println("Распределение невозможно. Пустой массив\n");
+           return;
+       }
         int sum = Arrays.stream(num).sum();
 
         if (sum % gps != 0) {
@@ -69,9 +77,9 @@ public class Task4 {
         }
 
         int num = nums[ind];
-        
+
         for (List<Integer> a : distr) {
-            if (a.stream().mapToInt(Integer::intValue).sum() + num <= sum) {
+            if ((a.stream().mapToInt(Integer::intValue).sum() + num ) <= sum) {
                 a.add(num);
                 if (distrRec(nums, sum ,ind + 1, distr)) {
                     return true;
