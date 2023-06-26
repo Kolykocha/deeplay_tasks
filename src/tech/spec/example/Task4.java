@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Task4 {
-    public static void run() {
+  /*  public static void run() {
         int[] numbers = {17, 12, 11, 3, 9, 8};
         int groups = 3;
         int[] numbers2 = {17, 12, 10, 4, 9, 8};
@@ -21,7 +21,7 @@ public class Task4 {
         distrNum(numbers3, groups3);
         distrNum(numbers4, groups4);
         distrNum(numbers5, groups5);
-    }
+    }*/
     public static void distrNum(int[] num, int groups) {
         if (groups < 1 ){
             System.out.println("Исходный массив: " + Arrays.toString(num)+" Число групп: "+groups);
@@ -43,8 +43,8 @@ public class Task4 {
             distr.add(new ArrayList<>());
         }
 
-        boolean possible = distrRec(num, 0, distr, target);
-        if (possible) {
+       // boolean possible = distrRec(num, 0, distr, target);
+       /* if (possible) {
             System.out.println("Исходный массив: " + Arrays.toString(num)+" Число групп: "+groups);
             System.out.println("Результаты распределения:");
             for (List<Integer> a : distr) {
@@ -55,30 +55,10 @@ public class Task4 {
         else {
             System.out.println("Исходный массив: " + Arrays.toString(num)+" Число групп: "+groups);
             System.out.println("Невозможно распределить числа на заданное число групп.");
-        }
+        }*/
     }
 
-    private static boolean distrRec(int[] nums, int ind, List<List<Integer>> distr, int sum) {
-        if (ind == nums.length) {
-            for (List<Integer> group : distr) {
-                if (group.stream().mapToInt(Integer::intValue).sum() != sum) {
-                    return false;
-                }
-            }
-            return true;
-        }
+    /*private static boolean distrRec(int[] nums, int ind, List<List<Integer>> distr, int sum) {
 
-        int num = nums[ind];
-        for (List<Integer> a : distr) {
-            if (a.stream().mapToInt(Integer::intValue).sum() + num <= sum) {
-                a.add(num);
-                if (distrRec(nums, ind + 1, distr, sum)) {
-                    return true;
-                }
-                a.remove(a.size() - 1);
-            }
-        }
-
-        return false;
-    }
+    }*/
 }
