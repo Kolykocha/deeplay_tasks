@@ -8,7 +8,7 @@ public class Main {
         Task1.run();
         System.out.println("\nЗадание №2\n");
         Task2.run();
-       /* System.out.println("\nЗадание №4\n");
-        Task4.run();*/
+        System.out.println("\nЗадание №4\n");
+        Task4.run();
     }
 }

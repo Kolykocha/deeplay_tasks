@@ -15,14 +15,14 @@ public class Task2 {
 
         Map<Integer, Integer> arr = new HashMap<>();
 
-        for (Integer integer : list) {
+        for (Integer intA : list) {
 
-            if (arr.containsKey(integer)) {
+            if (arr.containsKey(intA)) {
 
-                arr.compute(integer, (a, b) -> b + 1);
+                arr.compute(intA, (a, b) -> b + 1);
 
             } else {
-                arr.put(integer, 1);
+                arr.put(intA, 1);
             }
 
         }
